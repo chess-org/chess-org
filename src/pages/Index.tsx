@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import ChessInfo from "@/components/ChessInfo";
 import FamousPlayers from "@/components/FamousPlayers";
 import TournamentDetails from "@/components/TournamentDetails";
+import BlogNews from "@/components/BlogNews";
 import heroImage from "@/assets/chess-hero.jpg";
 
 const Index = () => {
@@ -52,6 +53,7 @@ const Index = () => {
       <TournamentDetails />
       <ChessInfo />
       <FamousPlayers />
+      <BlogNews />
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-secondary relative overflow-hidden">
