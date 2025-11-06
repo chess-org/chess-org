@@ -3,6 +3,7 @@ import ChessInfo from "@/components/ChessInfo";
 import FamousPlayers from "@/components/FamousPlayers";
 import TournamentDetails from "@/components/TournamentDetails";
 import BlogNews from "@/components/BlogNews";
+import Footer from "@/components/Footer";
 import heroImage from "@/assets/chess-hero.jpg";
 
 const Index = () => {
@@ -77,6 +78,8 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
