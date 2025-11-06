@@ -1,0 +1,268 @@
+:root {
+    --primary-green: #16a085;
+    --highlight-yellow: #f1c40f;
+    --highlight-cyan: #1abc9c;
+    --dark-text: #2c3e50;
+    --light-text: #ecf0f1;
+    --subtle-gray: #bdc3c7;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-green);
+    color: var(--dark-text);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8)),
+        url('https://i.imgur.com/K1oK1tH.png');
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    color: var(--dark-text);
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn-up 1s ease-out forwards;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section .highlight-yellow {
+    color: var(--highlight-yellow);
+}
+
+.hero-section .highlight-cyan {
+    color: var(--highlight-cyan);
+}
+
+.hero-section p.subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #34495e;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn-custom-primary {
+    background-color: #f39c12;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-primary:hover {
+    background-color: #e67e22;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-custom-secondary {
+    background-color: white;
+    color: var(--dark-text);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid var(--subtle-gray);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-custom-secondary:hover {
+    background-color: #f8f9fa;
+    color: var(--dark-text);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: #95a5a6;
+}
+
+/* --- Tournament Info Section --- */
+.info-section {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before {
+    content: "\f441";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    font-size: 15rem;
+    color: rgba(255, 255, 255, 0.05);
+    left: 10%;
+    top: 55%;
+    transform: translateY(-50%) rotate(-15deg);
+    z-index: 0;
+}
+
+.info-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.info-section p.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4rem;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn-up 0.6s ease-out forwards;
+}
+
+.info-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.info-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.info-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-10px);
+}
+
+.info-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.info-card .card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.25rem;
+}
+
+.info-card .card-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--light-text);
+}
+
+.placeholder-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    height: 150px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.btn-final-cta {
+    background-color: white;
+    color: var(--dark-text);
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-final-cta:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-section p.subtitle {
+        font-size: 1.1rem;
+    }
+
+    .info-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 80vh;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section p.subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    .info-section h2 {
+        font-size: 2rem;
+    }
+
+    .info-section::before {
+        font-size: 10rem;
+        left: -5%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+}
