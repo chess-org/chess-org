@@ -347,8 +347,32 @@ body {
     object-fit: cover;
 }
 
+/* changed: make caption background 50% opaque and improve text contrast */
 #inspiration .carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* 50% opaque black */
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    backdrop-filter: blur(4px);
     transform: translateY(-8px);
+    max-width: 85%;
+}
+
+/* highlight caption title and strengthen paragraph contrast */
+#inspiration .carousel-caption h5 {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+#inspiration .carousel-caption p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0;
+}
+
+/* responsive tweak */
+@media (max-width: 767px) {
+    #inspiration .carousel-caption { padding: 8px 10px; max-width: 95%; }
 }
 
 /* FOOTER: translucent */
