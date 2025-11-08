@@ -26,14 +26,43 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- small overrides to enable page background + overlay and logo shadow -->
+    <style>
+        /* full-page background (put background.jpg in project root) */
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        /* overlay for legible text */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+            z-index: 0;
+        }
+        /* make navbar sit above overlay */
+        .navbar, .hero-section, main, footer {
+            position: relative;
+            z-index: 2;
+        }
+        /* subtle logo styling */
+        .navbar-brand img {
+            height:36px;
+            border-radius:6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.45);
+        }
+    </style>
 </head>
 <body>
+    <!-- background overlay for contrast -->
+    <div class="bg-overlay" aria-hidden="true"></div>
 
     <!-- Navigation Panel -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="logo.png" alt="ChessChamp Logo" class="me-2" style="height:36px;">
+                <img src="logo.png" alt="ChessChamp Logo" class="me-2">
                 <span>ChessChamp 2025</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
