@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Interschool Chess Championship 2025 - register, view schedule, and get tournament info." />
-
     <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
+<link rel="icon" href="logo.png" type="image/png">
+
+<!-- Logo in Navbar -->
+<a class="navbar-brand fw-bold" href="#">
+    <img src="logo.png" alt="ChessChamp Logo" style="height:40px;vertical-align:middle;">
+    ChessChamp 2025
+</a>
 
     <title>Interschool Chess Championship 2025</title>
 
@@ -26,45 +30,13 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
-
-    <!-- small overrides to enable page background + overlay and logo shadow -->
-    <style>
-        /* full-page background (put background.jpg in project root) */
-        body {
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        /* overlay for legible text */
-        .bg-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.35);
-            z-index: 0;
-        }
-        /* make navbar sit above overlay */
-        .navbar, .hero-section, main, footer {
-            position: relative;
-            z-index: 2;
-        }
-        /* subtle logo styling */
-        .navbar-brand img {
-            height:36px;
-            border-radius:6px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.45);
-        }
-    </style>
 </head>
 <body>
-    <!-- background overlay for contrast -->
-    <div class="bg-overlay" aria-hidden="true"></div>
 
     <!-- Navigation Panel -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="logo.png" alt="ChessChamp Logo" class="me-2">
-                <span>ChessChamp 2025</span>
-            </a>
+            <a class="navbar-brand fw-bold" href="#">ChessChamp 2025</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -91,14 +63,14 @@
 
     <!-- Hero Section -->
     <header id="hero" class="hero-section">
-        <div class="container hero-content text-center">
-            <h1 class="display-4">
+        <div class="container hero-content">
+            <h1>
                 <span class="highlight-yellow">Interschool</span> <span class="highlight-cyan">Chess</span>
                 <br />
                 Championship 2025
             </h1>
-            <p class="subtitle lead">Where young minds compete, strategies collide, and champions are born</p>
-            <div class="hero-buttons mt-3">
+            <p class="subtitle">Where young minds compete, strategies collide, and champions are born</p>
+            <div class="hero-buttons">
                 <a href="registration.html" class="btn btn-custom-primary mx-2 my-2">Register Now</a>
                 <a href="#schedule" class="btn btn-custom-secondary mx-2 my-2">View Schedule</a>
             </div>
@@ -108,45 +80,48 @@
     <!-- Main Content -->
     <main>
         <!-- Tournament Information Section -->
-        <section id="tournament-info" class="info-section py-5">
+        <section id="tournament-info" class="info-section">
             <div class="container text-center">
                 <h2 class="section-title">Tournament Information</h2>
-                <p class="subtitle mb-4">Everything you need to know about the championship</p>
+                <p class="subtitle">Everything you need to know about the championship</p>
 
                 <div class="row justify-content-center g-4">
                     <!-- Info Card 1: Date -->
                     <div class="col-lg-3 col-md-6">
-                        <div class="info-card p-4 shadow-sm rounded bg-white">
-                            <div class="icon text-primary"><i class="fas fa-calendar-alt fa-2x"></i></div>
-                            <h3 class="card-title mt-3">Date</h3>
+                        <div class="info-card">
+                            <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                            <h3 class="card-title">Date</h3>
                             <p class="card-text">March 15-17, 2025</p>
                         </div>
                     </div>
                     <!-- Info Card 2: Venue -->
                     <div class="col-lg-3 col-md-6">
-                        <div class="info-card p-4 shadow-sm rounded bg-white">
-                            <div class="icon text-danger"><i class="fas fa-map-marker-alt fa-2x"></i></div>
-                            <h3 class="card-title mt-3">Venue</h3>
+                        <div class="info-card">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <h3 class="card-title">Venue</h3>
                             <p class="card-text">Central Sports Complex</p>
                         </div>
                     </div>
                     <!-- Info Card 3: Participants -->
                     <div class="col-lg-3 col-md-6">
-                        <div class="info-card p-4 shadow-sm rounded bg-white">
-                            <div class="icon text-success"><i class="fas fa-users fa-2x"></i></div>
-                            <h3 class="card-title mt-3">Participants</h3>
+                        <div class="info-card">
+                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <h3 class="card-title">Participants</h3>
                             <p class="card-text">50+ Schools</p>
                         </div>
                     </div>
                     <!-- Info Card 4: Prize Pool -->
                     <div class="col-lg-3 col-md-6">
-                        <div class="info-card p-4 shadow-sm rounded bg-white">
-                            <div class="icon text-warning"><i class="fas fa-dollar-sign fa-2x"></i></div>
-                            <h3 class="card-title mt-3">Prize Pool</h3>
+                        <div class="info-card">
+                            <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                            <h3 class="card-title">Prize Pool</h3>
                             <p class="card-text">$5,000+</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Placeholder Box -->
+                <div class="placeholder-box d-none d-md-block"></div>
 
                 <!-- Final CTA -->
                 <a id="register" href="registration.html" class="btn btn-final-cta mt-5">Register Your School Now</a>
@@ -181,7 +156,6 @@
             });
         });
     </script>
-
 <!-- Footer Section -->
 <footer class="bg-dark text-white pt-5 pb-3 mt-5">
     <div class="container">
