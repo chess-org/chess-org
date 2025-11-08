@@ -30,71 +30,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Custom CSS -->
+    <!-- Project CSS -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- small overrides to enable page background + overlay and logo shadow -->
-    <style>
-        :root {
-            --bg-image: url('background.jpg');
-            --accent: #f6b235;     /* warm accent (gold) */
-            --accent-2: #ff8a00;   /* secondary accent */
-            --muted: rgba(255,255,255,0.08);
-            --glass: rgba(255,255,255,0.06);
-            --logo-bg: #0d6efd; /* preserved theme color if needed */
-            --max-width: 1180px;
-        }
-
-        /* full-page background (put background.jpg in project root) */
-        body {
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        /* overlay for legible text */
-        .bg-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.35);
-            z-index: 0;
-        }
-        /* make navbar sit above overlay */
-        .navbar, .hero-section, main, footer {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* logo container: visible background that matches theme */
-        .navbar-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 8px;
-            background: var(--logo-bg);
-            border-radius: 8px;
-            box-shadow: 0 6px 18px rgba(13,110,253,0.20);
-            border: 2px solid rgba(255,255,255,0.06);
-        }
-        .navbar-brand img {
-            height: 44px; /* larger logo */
-            width: auto;
-            display: block;
-            border-radius: 6px;
-            background: transparent;
-        }
-
-        /* Carousel / Inspiration section */
-        #inspiration .carousel-item img {
-            width: 100%;
-            max-height: 460px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        #inspiration .carousel-caption {
-            background: rgba(0,0,0,0.45);
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
-    </style>
+    <!-- inline styles moved to styles.css -->
 </head>
 <body>
     <!-- background overlay for contrast -->
@@ -285,6 +224,13 @@
                         scrollTop: target.offset().top
                     }, 800);
                 }
+            });
+        });
+
+        // Small script to activate .fade-in-up animations moved from CSS
+        window.addEventListener && window.addEventListener('load', function(){
+            document.querySelectorAll('.fade-in-up').forEach(function(el){
+                el.classList.add('visible');
             });
         });
     </script>
