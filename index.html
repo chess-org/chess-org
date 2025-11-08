@@ -35,6 +35,10 @@
 
     <!-- small overrides to enable page background + overlay and logo shadow -->
     <style>
+        :root {
+            --logo-bg: #0d6efd; /* theme color used as logo background */
+        }
+
         /* full-page background (put background.jpg in project root) */
         body {
             background: url('background.jpg') no-repeat center center fixed;
@@ -52,11 +56,24 @@
             position: relative;
             z-index: 2;
         }
-        /* subtle logo styling */
+
+        /* logo container: visible background that matches theme */
+        .navbar-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: var(--logo-bg);
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(13,110,253,0.20);
+            border: 2px solid rgba(255,255,255,0.06);
+        }
         .navbar-brand img {
-            height:36px;
-            border-radius:6px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.45);
+            height: 44px; /* larger logo */
+            width: auto;
+            display: block;
+            border-radius: 6px;
+            background: transparent;
         }
 
         /* Carousel / Inspiration section */
