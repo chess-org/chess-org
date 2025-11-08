@@ -1,48 +1,61 @@
-import requests
-from bs4 import BeautifulSoup
 import os
+import requests
+from urllib.parse import quote_plus
 
-def download_image(url, player_name):
-    response = requests.get(url)
-    if response.status_code == 200:
-        # Create images directory if it doesn't exist
-        if not os.path.exists('chess_players_images'):
-            os.makedirs('chess_players_images')
-        
-        # Save image
-        file_name = f"chess_players_images/{player_name}.jpg"
-        with open(file_name, 'wb') as f:
-            f.write(response.content)
-        print(f"Downloaded image for {player_name}")
-    else:
-        print(f"Failed to download image for {player_name}")
+ROOT = os.path.dirname(__file__) or '.'
+PLAYERS = [
+    "Viswanathan Anand",
+    "R. Praggnanandhaa",
+    "Gukesh D",
+    "Pentala Harikrishna",
+    "Harika Dronavalli"
+]
 
-def scrape_chess_players():
-    # FIDE's page for top Indian players
-    url = "https://ratings.fide.com/top.phtml?list=men&country=IND"
-    
-    try:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Find player elements (this will need to be adjusted based on actual HTML structure)
-        player_elements = soup.find_all('tr', class_='playerlist')
-        
-        for player in player_elements:
-            try:
-                # Extract player name and image URL (adjust selectors based on actual HTML)
-                name = player.find('td', class_='name').text.strip()
-                img_element = player.find('img')
-                if img_element and 'src' in img_element.attrs:
-                    img_url = img_element['src']
-                    if not img_url.startswith('http'):
-                        img_url = 'https://ratings.fide.com/' + img_url
-                    download_image(img_url, name)
-            except Exception as e:
-                print(f"Error processing player: {str(e)}")
-                
-    except Exception as e:
-        print(f"Error scraping website: {str(e)}")
+API = "https://en.wikipedia.org/w/api.php"
+
+def fetch_thumbnail(player):
+    params = {
+        "action": "query",
+        "titles": player,
+        "prop": "pageimages",
+        "pithumbsize": "1200",
+        "format": "json",
+        "formatversion": "2"
+    }
+    r = requests.get(API, params=params, timeout=15)
+    r.raise_for_status()
+    data = r.json()
+    pages = data.get("query", {}).get("pages", [])
+    if not pages:
+        return None
+    thumb = pages[0].get("thumbnail", {}).get("source")
+    return thumb
+
+def download(url, outpath):
+    r = requests.get(url, stream=True, timeout=30)
+    r.raise_for_status()
+    with open(outpath, "wb") as f:
+        for chunk in r.iter_content(8192):
+            f.write(chunk)
+
+def safe_name(name):
+    return "".join(c if c.isalnum() else "_" for c in name).lower()
+
+def main():
+    os.chdir(ROOT)
+    for p in PLAYERS:
+        try:
+            print("Fetching:", p)
+            thumb = fetch_thumbnail(p)
+            if not thumb:
+                print("  No thumbnail found for", p)
+                continue
+            ext = os.path.splitext(thumb.split("?")[0])[1] or ".jpg"
+            out = f"{safe_name(p)}{ext}"
+            download(thumb, out)
+            print("  Saved:", out)
+        except Exception as e:
+            print("  Error for", p, "-", e)
 
 if __name__ == "__main__":
-    scrape_chess_players()
+    main()
