@@ -3,59 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <title>Interschool Chess Championship Registration</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
-        body { font-family: Arial, sans-serif; background: #e0f7fa; }
-        .container { max-width: 500px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px #bbb; }
-        h2 { text-align: center; color: #333; }
-        label { display: block; margin-top: 15px; }
-        input, select { width: 100%; padding: 8px; margin-top: 5px; }
-        button { background: #ffa726; color: #fff; padding: 12px; border: none; border-radius: 6px; width: 100%; margin-top: 20px; font-size: 1em; }
+        /* page background */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #222;
+        }
+
+        /* dark overlay for better contrast */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 0;
+        }
+
+        /* header with logo */
+        header.site-header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+        }
+        header.site-header .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+        }
+        header.site-header img {
+            height: 44px;
+            width: auto;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        header.site-header .brand {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* centered form card */
+        .form-wrap {
+            position: relative;
+            z-index: 2;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 16px;
+        }
+        .container {
+            width: 100%;
+            max-width: 560px;
+            background: rgba(255,255,255,0.96);
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        h2 { text-align: center; color: #111; margin: 0 0 12px; }
+        label { display: block; margin-top: 12px; color: #333; font-size: 0.95rem; }
+        input, select { width: 100%; padding: 10px; margin-top: 6px; box-sizing: border-box; border: 1px solid #d6d6d6; border-radius: 6px; }
+        input:focus, select:focus { outline: none; border-color: #6aa1ff; box-shadow: 0 0 0 3px rgba(102,153,255,0.12); }
+        button { background: #ff8a00; color: #fff; padding: 12px; border: none; border-radius: 8px; width: 100%; margin-top: 18px; font-size: 1rem; cursor: pointer; }
+        button:hover { filter: brightness(0.97); }
+
+        @media (max-width:600px) {
+            header.site-header { padding: 10px; }
+            .container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Interschool Chess Championship Registration</h2>
+    <div class="bg-overlay" aria-hidden="true"></div>
 
-        <!-- IMPORTANT: replace APPS_SCRIPT_URL with your deployed Apps Script web app URL -->
-        <form action="https://script.google.com/macros/s/AKfycbx0muFwBFm2RHap0IhELVrEaoYLRfnDjO_DhUdGuZ-_DJtVDOnWThdS4sALF8njBSyT/exec" method="post" >
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
-            
-            <label for="school">School Name:</label>
-            <input type="text" id="school" name="school" required>
-            
-            <label for="grade">Grade/Class:</label>
-            <input type="text" id="grade" name="grade" required>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="contact">Contact Number:</label>
-            <input type="text" id="contact" name="contact" required>
-            
-            <label for="guardian">Guardian’s Name:</label>
-            <input type="text" id="guardian" name="guardian" required>
-            
-            <label for="guardianContact">Guardian’s Contact:</label>
-            <input type="text" id="guardianContact" name="guardianContact" required>
-            
-            <label for="level">Chess Experience Level:</label>
-            <select id="level" name="level" required>
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-            </select>
-            
-            <label>
-                <input type="checkbox" name="consent" value="Yes" required>
-                I agree to the rules and consent to participation.
-            </label>
-            
-            <button type="submit">Register Now</button>
-        </form>
-    </div>
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            <img src="logo.png" alt="ChessChamp logo">
+            <span class="brand">ChessChamp 2025</span>
+        </a>
+    </header>
+
+    <main class="form-wrap">
+        <div class="container">
+            <h2>Interschool Chess Championship Registration</h2>
+
+            <!-- IMPORTANT: replace APPS_SCRIPT_URL with your deployed Apps Script web app URL -->
+            <form action="https://script.google.com/macros/s/AKfycbx0muFwBFm2RHap0IhELVrEaoYLRfnDjO_DhUdGuZ-_DJtVDOnWThdS4sALF8njBSyT/exec" method="post" >
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="6" max="100" step="1" required>
+
+                <label for="school">School Name:</label>
+                <input type="text" id="school" name="school" required>
+
+                <label for="grade">Grade/Class:</label>
+                <input type="text" id="grade" name="grade" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required inputmode="tel" pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number">
+
+                <label for="guardian">Guardian’s Name:</label>
+                <input type="text" id="guardian" name="guardian" required>
+
+                <label for="guardianContact">Guardian’s Contact:</label>
+                <input type="tel" id="guardianContact" name="guardianContact" required inputmode="tel" pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number">
+
+                <label for="level">Chess Experience Level:</label>
+                <select id="level" name="level" required>
+                    <option value="">Select level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+
+                <label style="margin-top:14px; font-weight:500;">
+                    <input type="checkbox" name="consent" value="Yes" required>
+                    I agree to the rules and consent to participation.
+                </label>
+
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
