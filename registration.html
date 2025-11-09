@@ -1,152 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Interschool Chess Championship Registration</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <style>
-        /* page background */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            color: #222;
-        }
+    <title>Register — Interschool Chess Championship</title>
 
-        /* dark overlay for better contrast */
-        .bg-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 0;
-        }
-
-        /* header with logo */
-        header.site-header {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            padding: 12px 20px;
-        }
-        header.site-header .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: #fff;
-        }
-        header.site-header img {
-            height: 44px;
-            width: auto;
-            display: block;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-        header.site-header .brand {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-        }
-
-        /* centered form card */
-        .form-wrap {
-            position: relative;
-            z-index: 2;
-            min-height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 16px;
-        }
-        .container {
-            width: 100%;
-            max-width: 560px;
-            background: rgba(255,255,255,0.96);
-            padding: 28px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-        }
-        h2 { text-align: center; color: #111; margin: 0 0 12px; }
-        label { display: block; margin-top: 12px; color: #333; font-size: 0.95rem; }
-        input, select { width: 100%; padding: 10px; margin-top: 6px; box-sizing: border-box; border: 1px solid #d6d6d6; border-radius: 6px; }
-        input:focus, select:focus { outline: none; border-color: #6aa1ff; box-shadow: 0 0 0 3px rgba(102,153,255,0.12); }
-        button { background: #ff8a00; color: #fff; padding: 12px; border: none; border-radius: 8px; width: 100%; margin-top: 18px; font-size: 1rem; cursor: pointer; }
-        button:hover { filter: brightness(0.97); }
-
-        @media (max-width:600px) {
-            header.site-header { padding: 10px; }
-            .container { padding: 20px; }
-        }
-    </style>
-    <!-- Favicons: provide multiple sizes for better visibility in browser tab and devices -->
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="favicon-192.png">
     <meta name="theme-color" content="#0d6efd">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous" />
+
+    <!-- Project CSS -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div class="bg-overlay" aria-hidden="true"></div>
 
-    <header class="site-header">
-        <a class="logo" href="index.html" aria-label="Home">
-            <img src="logo.png" alt="Site logo">
-        </a>
-    </header>
-
-    <main class="form-wrap">
+    <!-- Navigation (same as index) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <h2>Interschool Chess Championship Registration</h2>
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Home">
+                <img src="logo.png" alt="Site logo" style="height:44px; width:auto; border-radius:8px;">
+            </a>
 
-            <!-- IMPORTANT: replace APPS_SCRIPT_URL with your deployed Apps Script web app URL -->
-            <form action="https://script.google.com/macros/s/AKfycbx0muFwBFm2RHap0IhELVrEaoYLRfnDjO_DhUdGuZ-_DJtVDOnWThdS4sALF8njBSyT/exec" method="post" >
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="6" max="100" step="1" required>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tournament.html">Tournament Info</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="registration.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <label for="school">School Name:</label>
-                <input type="text" id="school" name="school" required>
+    <!-- Registration form -->
+    <main class="form-wrap py-5">
+        <div class="container d-flex justify-content-center">
+            <div class="card shadow-lg" style="max-width:720px; width:100%;">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-3">Interschool Chess Championship Registration</h2>
 
-                <label for="grade">Grade/Class:</label>
-                <input type="text" id="grade" name="grade" required>
+                    <!-- IMPORTANT: replace APPS_SCRIPT_URL with your deployed Apps Script web app URL -->
+                    <form id="regForm" action="https://script.google.com/macros/s/AKfycbx0muFwBFm2RHap0IhELVrEaoYLRfnDjO_DhUdGuZ-_DJtVDOnWThdS4sALF8njBSyT/exec" method="post" novalidate>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input id="name" name="name" type="text" class="form-control" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="age" class="form-label">Age</label>
+                                <input id="age" name="age" type="number" min="6" max="100" class="form-control" required>
+                            </div>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+                            <div class="col-12 col-md-6">
+                                <label for="school" class="form-label">School Name</label>
+                                <input id="school" name="school" type="text" class="form-control" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="grade" class="form-label">Grade / Class</label>
+                                <input id="grade" name="grade" type="text" class="form-control" required>
+                            </div>
 
-                <label for="contact">Contact Number:</label>
-                <input type="tel" id="contact" name="contact" required inputmode="tel" pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number">
+                            <div class="col-12 col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" name="email" type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="contact" class="form-label">Contact Number</label>
+                                <input id="contact" name="contact" type="tel" class="form-control" inputmode="tel"
+                                       pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number" required>
+                            </div>
 
-                <label for="guardian">Guardian’s Name:</label>
-                <input type="text" id="guardian" name="guardian" required>
+                            <div class="col-12 col-md-6">
+                                <label for="guardian" class="form-label">Guardian's Name</label>
+                                <input id="guardian" name="guardian" type="text" class="form-control" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="guardianContact" class="form-label">Guardian's Contact</label>
+                                <input id="guardianContact" name="guardianContact" type="tel" class="form-control" required>
+                            </div>
 
-                <label for="guardianContact">Guardian’s Contact:</label>
-                <input type="tel" id="guardianContact" name="guardianContact" required inputmode="tel" pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number">
+                            <div class="col-12 col-md-6">
+                                <label for="level" class="form-label">Chess Experience Level</label>
+                                <select id="level" name="level" class="form-select" required>
+                                    <option value="">Select level</option>
+                                    <option>Beginner</option>
+                                    <option>Intermediate</option>
+                                    <option>Advanced</option>
+                                </select>
+                            </div>
 
-                <label for="level">Chess Experience Level:</label>
-                <select id="level" name="level" required>
-                    <option value="">Select level</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                </select>
+                            <div class="col-12 col-md-6 d-flex align-items-center">
+                                <div class="form-check">
+                                    <input id="consent" name="consent" class="form-check-input" type="checkbox" value="Yes" required>
+                                    <label class="form-check-label" for="consent">
+                                        I agree to the rules and consent to participation.
+                                        <a href="terms.html" target="_blank" rel="noopener" class="ms-2">Read Terms &amp; Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
 
-                <label style="margin-top:14px; font-weight:500;">
-                    <input type="checkbox" name="consent" value="Yes" required>
-                    I agree to the rules and consent to participation.
-                </label>
+                            <div class="col-12">
+                                <button id="submitBtn" type="submit" class="btn btn-primary w-100">Register Now</button>
+                            </div>
 
-                <button type="submit">Register Now</button>
-            </form>
+                            <div class="col-12">
+                                <div id="formMessage" class="alert d-none mt-2" role="alert"></div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
     </main>
+    
+    <footer class="bg-dark text-white py-3 mt-4">
+        <div class="container text-center small">
+            &copy; 2025 Interschool Chess Championship
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script>
+    // lightweight client-side feedback and basic validation UI
+    (function(){
+      const form = document.getElementById('regForm');
+      const msg = document.getElementById('formMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function(ev){
+        // browser will handle required/validation; show pending state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        msg.classList.remove('d-none','alert-success','alert-danger');
+        // allow normal submit to server (remove if you want to post via fetch)
+        setTimeout(function(){
+          // if user didn't replace action, show warning
+          if (!form.action || form.action.includes('APPS_SCRIPT_URL_HERE')) {
+            ev.preventDefault();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Register Now';
+            msg.textContent = 'Replace APPS_SCRIPT_URL_HERE with your deployed Apps Script URL. Submission prevented.';
+            msg.classList.add('alert','alert-danger','d-block');
+          }
+        }, 200);
+      }, false);
+    })();
+    </script>
 </body>
 </html>

@@ -17,26 +17,29 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), var(--bg-image);
-    background-size: cover;
-    background-position: center;
-    color: var(--text-on-dark);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  /* Full page background + subtle vignette (lightened so background shows more) */
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.28)), var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  color: var(--text-on-dark);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* keep overlay div but hide default heavy overlay */
+/* subtle page overlay to keep text readable but allow background visibility */
 .bg-overlay {
-    background: transparent;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.10); /* slight dark tint */
+  z-index: 0;
 }
 
-/* NAVBAR: glassy, elevated */
+/* NAVBAR: make glass lighter so background shows through more */
 .navbar {
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.65));
-    backdrop-filter: blur(6px) saturate(1.05);
-    border-bottom: 1px solid var(--muted);
-    padding: 12px 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0.35));
+  backdrop-filter: blur(6px) saturate(1.05);
+  border-bottom: 1px solid var(--muted);
+  padding: 12px 0;
 }
 
 .navbar .container {
