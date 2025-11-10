@@ -49,25 +49,53 @@
   </nav>
 
   <!-- Under Construction Hero -->
-  <header class="hero-section text-center py-6">
-    <div class="container">
-      <div class="badge rounded-pill mb-3" style="background:linear-gradient(90deg,#f6b235,#ff8a00);color:#111;font-weight:700;padding:8px 16px;display:inline-block;">
-        UNDER CONSTRUCTION
-      </div>
-      <h1 class="display-5 mt-3">Tournament Information</h1>
-      <p class="lead mt-2 mb-4">This page will contain full tournament rules, schedule, pairings and results. Content is being prepared — check back soon.</p>
-      <a href="registration.html" class="btn btn-custom-primary me-2">Register Now</a>
-      <a href="index.html" class="btn btn-custom-secondary">Return Home</a>
-    </div>
-  </header>
+  <section id="schedule-plan">
+  <div class="container">
+    <h2 class="section-title">Tournament Match Schedule Plan</h2>
+    <p>Total Players: 100 &nbsp;|&nbsp; Chess Boards: 10 &nbsp;|&nbsp; Duration: 3 hours</p>
+    <ul>
+      <li>Single Elimination, 10 minutes per match</li>
+      <li>7 Rounds needed, each round divided into 3 sessions</li>
+      <li>Each session: 10 matches played in parallel</li>
+      <li>Use board number indicators for tracking & display</li>
+      <li>Results auto-updated after each round</li>
+    </ul>
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Session</th>
+          <th>Start Time</th>
+          <th>Boards In Use</th>
+          <th>Players</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Round 1 - Session 1</td>
+          <td>9:00 am</td>
+          <td>Boards 1-10</td>
+          <td>Players 1-20</td>
+        </tr>
+        <tr>
+          <td>Round 1 - Session 2</td>
+          <td>9:10 am</td>
+          <td>Boards 1-10</td>
+          <td>Players 21-40</td>
+        </tr>
+        <tr>
+          <td>Round 1 - Session 3</td>
+          <td>9:20 am</td>
+          <td>Boards 1-5</td>
+          <td>Players 41-50</td>
+        </tr>
+        <!-- Continue for all rounds -->
+      </tbody>
+    </table>
+    <p>For best experience, use a dynamic JS scheduler or dedicated tournament pairing software such as ChessManager or PlayPass for live updates.</p>
+  </div>
+</section>
+>
 
-  <main class="py-5">
-    <div class="container" style="max-width:900px;">
-      <div class="mb-4">
-        <div class="alert alert-info mb-0" role="alert">
-          Important: Tournament information and Terms & Conditions are being finalized. Below is the provisional Terms & Conditions — subject to change.
-        </div>
-      </div>
 
       <!-- Terms & Conditions (provisional) -->
       <section class="card shadow-sm mb-5">
