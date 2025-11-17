@@ -76,33 +76,9 @@
               <th scope="col">Address</th>
               <th scope="col">Website</th>
               <th scope="col">ICL LeaderBoard</th>
-              
             </tr>
           </thead>
-
-          <!--table content starting-->
- <tbody>
-<tr>  <td>Global Scholars High</td>
-      <td>22 Unity Lane, New Delhi</td>
-      <td><a href="https://globalscholars.in">globalscholars.in</a></td>
-      <td><a href="./schools/global_scholars_high/global_scholars_high.html">Global Scholars High</a></td>
-    </tr>
-    <tr>
-      <td>Oakridge Academy</td>
-      <td>58 Palm Avenue, Bengaluru, Karnataka</td>
-      <td><a href="https://oakridgeacademy.org">oakridgeacademy.org</a></td>
-      <td><a href="./schools/oakridge_academy/oakridge_academy.html">Oakridge Academy</a></td>
-    </tr>
-    <tr>
-      <td>Sunrise International School</td>
-      <td>1234 Greenfield Road, Pune, Maharashtra</td>
-      <td><a href="https://sunrise.edu.in">sunrise.edu.in</a></td>
-      <td><a href="./schools/sunrise_international_school/sunrise_international_school.html">Sunrise International School</a></td>
-    </tr>
-
-        <!--table content end-->
-
-          
+          <tbody></tbody>
         </table>
       </div>
     </div>
@@ -125,15 +101,44 @@
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-  <!-- DataTables Initialization -->
+  <!-- PapaParse -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <!-- DataTables Initialization with CSV -->
   <script>
-    $(document).ready(function () {
-      $('#schoolsTable').DataTable({
-        paging: true,
-        searching: true,
-        ordering: true,
-        info: true
-      });
+    // Utility: format school name into leaderboard URL
+    function formatSchoolURL(schoolName) {
+      const slug = schoolName.toLowerCase().replace(/\s+/g, '_');
+      return `./schools/${slug}/${slug}.html`;
+    }
+
+    // Parse CSV and populate table
+    Papa.parse("https://raw.githubusercontent.com/chess-org/chess-org/refs/heads/main/schools/schools.csv", {   // <-- place schools.csv in same folder
+      download: true,
+      header: true,
+      complete: function(results) {
+        const tbody = document.querySelector('#schoolsTable tbody');
+        results.data.forEach(school => {
+          if (!school["Name of School"]) return; // skip empty rows
+          const leaderboardLink = formatSchoolURL(school["Name of School"]);
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${school["Name of School"]}</td>
+            <td>${school["Address"]}</td>
+            <td><a href="${school["Website"]}" target="_blank">${school["Website"]}</a></td>
+            <td><a href="${leaderboardLink}" target="_blank">${school["Name of School"]}</a></td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        // Initialize DataTable
+        $('#schoolsTable').DataTable({
+          paging: true,
+          searching: true,
+          ordering: true,
+          info: true
+        });
+      }
     });
   </script>
 </body>

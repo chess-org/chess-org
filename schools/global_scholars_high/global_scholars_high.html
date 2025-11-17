@@ -153,7 +153,7 @@
       return `./schools/${slug}/${slug}.html`;
     }
 
-    Papa.parse("students.csv", {
+    Papa.parse("https://raw.githubusercontent.com/chess-org/chess-org/refs/heads/main/schools/global_scholars_high/students.csv", {
       download: true,
       header: true,
       complete: function(results) {
