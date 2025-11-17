@@ -87,7 +87,7 @@ body {
         url('https://i.imgur.com/K1oK1tH.png');
     background-size: cover;
     background-position: center;
-    height: 85vh;
+    height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -465,6 +465,14 @@ table a:hover {
   color: black;
   border-color: black;
 }
+.hero-content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+  }
+}
+
 
 /* usage: add .fade-in-up to hero content and call js to add .visible on load */
 document.addEventListener &&

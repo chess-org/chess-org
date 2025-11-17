@@ -7,14 +7,12 @@
 
     <!-- Favicon -->
     <link rel="icon" href="logo-sc.png" type="image/png">
-
-    <!-- Shortcut icon + touch icons (use logo.png) -->
     <link rel="shortcut icon" href="logo-sc.png" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
     <meta name="msapplication-TileImage" content="logo.png">
     <meta name="theme-color" content="#0d6efd">
 
-    <!-- Favicons: provide multiple sizes for better visibility in browser tab and devices -->
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
@@ -42,56 +40,68 @@
     <!-- Project CSS -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- inline styles moved to styles.css -->
+    <style>
+        .tagline {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #ffc107;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <!-- background overlay for contrast -->
     <div class="bg-overlay" aria-hidden="true"></div>
 
     <!-- Navigation Panel -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav fw-semibold">
-                <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
-    <div class="container hero-content text-start">
-    <img src="logo.png" alt="Interschool Chess Championship Logo" class="mb-3" style="max-width: 120px; height: auto; display: block;">
+    <!-- Hero Section -->
+<div class="container hero-content d-flex align-items-start justify-content-between text-start flex-wrap">
+  <!-- Left section: main logo and text -->
+  <div>
+    <img src="logo.png" alt="Interschool Chess Championship Logo" class="mb-3" style="max-width: 170px; height: auto; display: block;">
     <h1 class="display-4">
-        <span class="highlight-yellow">Interschool</span> <span class="highlight-cyan">Chess</span>
-        <br />
-        Championship 
+      <span class="highlight-yellow">Interschool</span> <span class="highlight-cyan">Chess</span><br />
+      Championship
     </h1>
     <p class="subtitle lead">Where young minds compete, strategies collide, and champions are born</p>
+    <p class="tagline">One League. Infinite Possibilities</p>
     <div class="hero-buttons mt-3">
-        <a href="registration.html" class="btn btn-custom-primary mx-2 my-2">Register Now</a>
-        
+      <a href="registration.html" class="btn btn-custom-primary mx-2 my-2">Register Now</a>
     </div>
+  </div>
+
+  <!-- Right section: Azadi logo -->
+  <div class="ms-auto">
+    <img src="Azadi-Ka-Amrit-Mahotsav-Logo.png" alt="75 Years of Amrit Utsav Logo"
+      style="max-width: 150px; height: auto;">
+  </div>
 </div>
-
-
-
     <!-- Main Content -->
     <main>
-        <!-- Mission & Vision (moved above players info) -->
+        <!-- Mission & Vision -->
         <section id="mission-vision" class="py-5">
             <div class="container text-center">
                 <h2 class="section-title">Our Mission &amp; Vision</h2>
                 <p class="subtitle mb-4">Building confident thinkers through chess education and competition.</p>
-
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6">
                         <div class="info-card p-4 shadow-sm rounded h-100">
@@ -111,11 +121,10 @@
             </div>
         </section>
 
-        <!-- Inspiration: slideshow of top Indian players (moved below Mission & Vision) -->
+        <!-- Inspiration: slideshow of top Indian players -->
         <section id="inspiration" class="py-5">
             <div class="container text-center text-white">
                 <h2 class="section-title mb-4">Inspiration — Top Indian Players</h2>
-
                 <div id="inspirationCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Inspiration carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#inspirationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -124,7 +133,6 @@
                         <button type="button" data-bs-target="#inspirationCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                         <button type="button" data-bs-target="#inspirationCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                     </div>
-
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="anand.jpg" class="d-block w-100" alt="Viswanathan Anand">
@@ -162,7 +170,6 @@
                             </div>
                         </div>
                     </div>
-
                     <button class="carousel-control-prev" type="button" data-bs-target="#inspirationCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -172,57 +179,54 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                
-
-           </div>
+            </div>
         </section>
-
     </main>
 
     <!-- Footer Section -->
-<footer class="bg-dark text-white pt-5 pb-3 mt-5">
-  <div class="container">
-    <div class="row">
-      <!-- Social Media -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Connect With Us</h5>
-        <div class="d-flex">
-          <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-          <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-          <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="#" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-          <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Social Media -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Connect With Us</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <!-- Blog Section -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Chess Blogs</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-underline">Latest Tactics & Openings</a></li>
+                        <li><a href="#" class="text-white text-decoration-underline">Student Success Stories</a></li>
+                        <li><a href="#" class="text-white text-decoration-underline">Tournament Insights</a></li>
+                        <li><a href="#" class="text-white text-decoration-underline">Strategic Advice</a></li>
+                    </ul>
+                </div>
+                <!-- Legal Links -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Legal & Policies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://rooktook.com/privacy-policy" class="text-white text-decoration-underline">Privacy Policy</a></li>
+                        <li><a href="https://rooktook.com/refund-policy" class="text-white text-decoration-underline">Refund Policy</a></li>
+                        <li><a href="https://rooktook.com/terms-and-conditions" class="text-white text-decoration-underline">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-1">&copy; 2025 Interschool Chess Championship. All rights reserved.</p>
+                    <small class="text-muted">This site is for entertainment</small>
+                    <p class="tagline text-center mt-2 mb-0">One League. Infinite Possibilities</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Blog Section -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Chess Blogs</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-underline">Latest Tactics & Openings</a></li>
-          <li><a href="#" class="text-white text-decoration-underline">Student Success Stories</a></li>
-          <li><a href="#" class="text-white text-decoration-underline">Tournament Insights</a></li>
-          <li><a href="#" class="text-white text-decoration-underline">Strategic Advice</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal Links -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Legal & Policies</h5>
-        <ul class="list-unstyled">
-          <li><a href="https://rooktook.com/privacy-policy" class="text-white text-decoration-underline">Privacy Policy</a></li>
-          <li><a href="https://rooktook.com/refund-policy" class="text-white text-decoration-underline">Refund Policy</a></li>
-          <li><a href="https://rooktook.com/terms-and-conditions" class="text-white text-decoration-underline">Terms & Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <hr class="bg-secondary">
-
-    <div class="row">
-      <div class="col text-center">
-        <p class="mb-1">&copy; 2025 Interschool Chess Championship. All rights reserved.</p>
-        <small class="text-muted">
-          This site is for entertainment
+    </footer>
 </body>
 </html>
