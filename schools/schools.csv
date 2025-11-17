@@ -1,4 +1,4 @@
-Name of School,Address,Website,,
-Global Scholars High,22 Unity Lane, New Delhi,https://globalscholars.in,
-Oakridge Academy,58 Palm Avenue, Bengaluru, Karnataka,https://oakridgeacademy.org
-Sunrise International School,1234 Greenfield Road, Pune, Maharashtra,https://sunrise.edu.in
+Name of School,Address,Offcial Website,ICL leaderboard
+Global Scholars High,22 Unity Lane, New Delhi,"""./schools/global_scholars_high/global_scholars_high.html"""
+Oakridge Academy,58 Palm Avenue, Bengaluru,"""./schools/oakridge_academy/oakridge_academy.html"""
+Sunrise International School,1234 Greenfield Road, Pune,"""./schools/sunrise_international_school/sunrise_international_school.html"""
