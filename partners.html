@@ -153,7 +153,7 @@
             <tr>
               <th>Name of School</th>
               <th>Address</th>
-              <th>Website</th>
+              <th>Official Website</th>
               <th>ICL LeaderBoard</th>
             </tr>
           </thead>
@@ -195,7 +195,7 @@
           row.innerHTML = `
             <td>${school["Name of School"]}</td>
             <td>${school["Address"]}</td>
-            <td><a href="${school["Website"]}" target="_blank">${school["Website"]}</a></td>
+            <td><a href="${school["Official Website"]}" target="_blank">${school["Official Website"]}</a></td>
             <td><a href="${leaderboardLink}" target="_blank">${school["Name of School"]}</a></td>
           `;
           tbody.appendChild(row);
