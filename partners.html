@@ -22,7 +22,6 @@
       min-height: 100vh;
       color: #fff;
     }
-
     /* Navbar */
     .navbar {
       background-color: #111 !important;
@@ -40,7 +39,6 @@
     .navbar-nav .nav-link.active {
       color: #ffd700 !important;
     }
-
     /* Hero Section */
     .hero-section {
       background: linear-gradient(rgba(229, 232, 236, 0.8), rgba(13,110,253,0.8)), url('chess-banner.jpg') center/cover no-repeat;
@@ -57,7 +55,6 @@
       max-width: 700px;
       margin: auto;
     }
-
     /* Table Styling */
     #schoolsTable {
       width: 100%;
@@ -82,7 +79,6 @@
     #schoolsTable a:hover {
       text-decoration: underline;
     }
-
     /* Footer */
     footer {
       background-color: #111;
@@ -91,7 +87,6 @@
     footer small {
       color: #ffd700;
     }
-
     /* DataTables search box */
     .dataTables_filter input {
       background: #222;
@@ -116,8 +111,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Home">
-        <img src="logo.png" alt="Site logo">
-        
+        <img src="logo.png" alt="Site logo" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -178,35 +172,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
   <script>
+    // Formats school name to a valid URL slug
     function formatSchoolURL(schoolName) {
-      const slug = schoolName.toLowerCase().replace(/\s+/g, '_');
-      return `./schools/${slug}/${slug}.html`;
+      return `./schools/${schoolName.toLowerCase().replace(/\s+/g, '_')}/${schoolName.toLowerCase().replace(/\s+/g, '_')}.html`;
     }
 
+    // Load CSV data using PapaParse and populate table
     Papa.parse("https://raw.githubusercontent.com/chess-org/chess-org/main/schools/schools.csv", {
       download: true,
       header: true,
       complete: function(results) {
         const tbody = document.querySelector('#schoolsTable tbody');
         results.data.forEach(school => {
-          if (!school["Name of School"]) return;
+          if (!school["Name of School"]) return; // Skip invalid rows
           const leaderboardLink = formatSchoolURL(school["Name of School"]);
           const row = document.createElement('tr');
           row.innerHTML = `
             <td>${school["Name of School"]}</td>
             <td>${school["Address"]}</td>
-            <td><a href="${school["Official Website"]}" target="_blank">${school["Official Website"]}</a></td>
-            <td><a href="${leaderboardLink}" target="_blank">${school["Name of School"]}</a></td>
+            <td><a href="${school["Website"]}" target="_blank" rel="noopener noreferrer">${school["Website"]}</a></td>
+            <td><a href="${leaderboardLink}" target="_blank" rel="noopener noreferrer">${school["Name of School"]}</a></td>
           `;
           tbody.appendChild(row);
         });
 
+        // Initialize DataTable after data is appended
         $('#schoolsTable').DataTable({
           paging: true,
           searching: true,
           ordering: true,
           info: true
         });
+      },
+      error: function(err) {
+        console.error('Error loading CSV:', err);
       }
     });
   </script>
