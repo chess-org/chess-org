@@ -143,7 +143,7 @@
           <th>School</th>
           <th>Age</th>
           <th>Category</th>
-          <th>ICL LeaderBoard</th>
+          
         </tr>
       </thead>
       <tbody></tbody>
@@ -176,8 +176,7 @@
             <td>${student.Name}</td>
             <td>${student.School}</td>
             <td>${student.Age}</td>
-            <td>${student.Category || ''}</td>
-            <td><a href="${leaderboardLink}" class="text-warning text-decoration-none" target="_blank">${student.School}</a></td>
+            <td>${student.Category || ''}</td>    
           `;
           tbody.appendChild(row);
         });
