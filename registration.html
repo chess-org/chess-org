@@ -53,44 +53,36 @@
                     <form id="regForm" action="https://script.google.com/macros/s/AKfycbx0muFwBFm2RHap0IhELVrEaoYLRfnDjO_DhUdGuZ-_DJtVDOnWThdS4sALF8njBSyT/exec" method="post" novalidate>
                         <div class="row g-3">
                             <div class="col-12 col-md-6">
-                                <label for="name" class="form-label">Full Name</label>
+                                <label for="name" class="form-label">Full Name  <span class="text-danger">*</span></label>
                                 <input id="name" name="name" type="text" class="form-control" required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="age" class="form-label">Age</label>
+                                <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
                                 <input id="age" name="age" type="number" min="6" max="100" class="form-control" required>
                             </div>
 
                             <div class="col-12 col-md-6">
-                                <label for="school" class="form-label">School Name</label>
+                                <label for="school" class="form-label">School Name <span class="text-danger">*</span></label>
                                 <input id="school" name="school" type="text" class="form-control" required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="grade" class="form-label">Grade / Class</label>
+                                <label for="grade" class="form-label">Grade / Class <span class="text-danger">*</span></label>
                                 <input id="grade" name="grade" type="text" class="form-control" required>
                             </div>
 
                             <div class="col-12 col-md-6">
-                                <label for="email" class="form-label">Email</label>
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                 <input id="email" name="email" type="email" class="form-control" required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="contact" class="form-label">Contact Number</label>
+                                <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
                                 <input id="contact" name="contact" type="tel" class="form-control" inputmode="tel"
                                        pattern="[\d+\-\s]{7,20}" title="Enter a valid phone number" required>
                             </div>
 
-                            <div class="col-12 col-md-6">
-                                <label for="guardian" class="form-label">Guardian's Name</label>
-                                <input id="guardian" name="guardian" type="text" class="form-control" required>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="guardianContact" class="form-label">Guardian's Contact</label>
-                                <input id="guardianContact" name="guardianContact" type="tel" class="form-control" required>
-                            </div>
 
                             <div class="col-12 col-md-6">
-                                <label for="level" class="form-label">Chess Experience Level</label>
+                                <label for="level" class="form-label">Chess Experience Level <span class="text-danger">*</span></label>
                                 <select id="level" name="level" class="form-select" required>
                                     <option value="">Select level</option>
                                     <option>Beginner</option>
@@ -101,7 +93,7 @@
 
                             <div class="col-12 col-md-6 d-flex align-items-center">
                                 <div class="form-check">
-                                    <input id="consent" name="consent" class="form-check-input" type="checkbox" value="Yes" required>
+                                    <input id="consent" name="consent" class="form-check-input" type="checkbox" value="Yes" required checked>
                                     <label class="form-check-label" for="consent">
                                         I agree to the rules and consent to participation.
                                         <a href="terms.html" target="_blank" rel="noopener" class="ms-2">Read Terms &amp; Conditions</a>
